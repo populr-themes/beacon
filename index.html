@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8">
   <!-- Name of yur theme -->
-  <title>Center</title>
+  <title>Beacon Technologies</title>
 
+<!--
   <palette class="palette-default" name="Light" preview="#cccccc">
   <palette class="palette-dark" name="Dark" preview="#111">
   <palette class="palette-transparent" name="Transparent" preview="#888,#fff,#888,#fff,#888,#fff,#888,#fff,#888,#fff">
+-->
 
   <!-- Add any styles your theme requires here -->
   <link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox-1.3.4.css">
@@ -24,101 +26,144 @@
   <!-- Put your theme's inside this script tag. The script tag will
        prevent issues with quote escaping and invalid markup. -->
   <script id="theme" type="text/x-handlebars-template">
-    <div class="pop-title-wrapper">{{{title}}}</div>
-    <div id = "main-region-wrapper">
-      {{#region "packer" id="main-region" columns="2" column_width="340" gutter_width="20" dummy_content="I-3-m,T-1-m,V-1-m,E-1-m,D-4-m,I-3-l,T-1-l,V-1-l,E-1-l,D-4-l" default_content="I-3-m,T-1-m" max_auto_assets="0" sizes="m,l" default_size="m"}}
+    {{{title}}}
 
-        {{#asset "text" size="m"}}
-          {{{title}}}
-          <div class="content">
-            {{{body}}}
-          </div>
-        {{/asset}}
+    {{#region "packer" id="main-region" columns="3" column_width="264" gutter_width="24" dummy_content="T-1-l,T-1-m,T-1-s,I-2-l,I-1-l,I-2-m,I-1-m,I-2-s,I-1-s,V-2-l,V-1-l,V-2-m,V-1-m,V-2-s,V-1-s,D-2-l,D-1-l,D-2-m,D-1-m,D-2-s,D-1-s,E-2-l,E-1-l,E-2-m,E-1-m,E-2-s,E-1-s" max_auto_assets="0" sizes="s,m,l" default_size="m"}}
 
-        {{#asset "text" size="l"}}
-          {{{title}}}
-          <div class="content">
-            {{{body}}}
-          </div>
-        {{/asset}}
+      {{#asset "text" size="s"}}
+        {{{title}}}
+        <hr>
+        {{{body}}}
+      {{/asset}}
 
-        {{#asset "documentgroup" size="m"}}
-          {{{title}}}
-          <div class="content">
-            <ul class="documents">
-            {{#documents}}
-              <li><a href="{{original_url}}">{{title}}</a></li>
-            {{/documents}}
-            </ul>
-          </div>
-          {{{description}}}
-        {{/asset}}
+      {{#asset "text" size="m"}}
+        {{{title}}}
+        {{{body}}}
+      {{/asset}}
 
-        {{#asset "documentgroup" size="l"}}
-          {{{title}}}
-          <div class="content">
-            <ul class="documents">
-            {{#documents}}
-              <li><a href="{{original_url}}">{{title}}</a></li>
-            {{/documents}}
-            </ul>
-          </div>
-          {{{description}}}
-        {{/asset}}
+      {{#asset "text" size="l"}}
+        {{{title}}}
+        <hr>
+        {{{body}}}
+      {{/asset}}
 
-        {{#asset "embedgroup" size="m" width="310"}}
-          {{{title}}}
-          <div class="content">
+      {{#asset "imagegroup" size="s"}}
+        {{{title}}}
+        <div class="content">
+          {{{imageslider contents width="264" height="198"}}}
+        </div>
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "imagegroup" size="m"}}
+        {{{title}}}
+        <div class="content">
+          {{{imageslider contents width="550" height="368"}}}
+        </div>
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "imagegroup" size="l"}}
+        <div class="content">
+          {{{imageslider contents width="840" height="225"}}}
+        </div>
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "videogroup" size="s"}}
+        {{{title}}}
+        <div class="content">
+          {{{videoplayer contents width="264" height="198" resolution="small"}}}
+        </div>
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "videogroup" size="m"}}
+        {{{title}}}
+        <div class="content">
+          {{{videoplayer contents width="550" height="368" resolution="medium"}}}
+        </div>
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "videogroup" size="l"}}
+        <div class="content">
+          {{{videoplayer contents width="840" height="502" resolution="large"}}}
+        </div>
+        {{{title}}}
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "documentgroup" size="s"}}
+        {{{title}}}
+        <hr>
+        <div class="content">
+          <ul class="documents">
+          {{#documents}}
+            <li><a href="{{original_url}}">{{title}}</a></li>
+          {{/documents}}
+          </ul>
+        </div>
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "documentgroup" size="m"}}
+        {{{title}}}
+        <div class="content">
+          <ul class="documents">
+          {{#documents}}
+            <li><a href="{{original_url}}">{{title}}</a></li>
+          {{/documents}}
+          </ul>
+        </div>
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "documentgroup" size="l"}}
+        {{{title}}}
+        <div class="content">
+          <ul class="documents">
+          {{#documents}}
+            <li><a href="{{original_url}}">{{title}}</a></li>
+          {{/documents}}
+          </ul>
+        </div>
+        {{{description}}}
+      {{/asset}}
+
+      {{#asset "embedgroup" size="s" width="264"}}
+        {{{title}}}
+        <div class="content">
           {{#embeds}}
             <div class="embed">{{{html}}}</div>
           {{/embeds}}
-          </div>
-          {{{description}}}
-        {{/asset}}
+        </div>
+        {{{description}}}
+      {{/asset}}
 
-        {{#asset "embedgroup" size="l" width="670"}}
-          {{{title}}}
-          <div class="content">
+      {{#asset "embedgroup" size="m" width="550"}}
+        {{{title}}}
+        <div class="content">
           {{#embeds}}
             <div class="embed">{{{html}}}</div>
           {{/embeds}}
-          </div>
-          {{{description}}}
-        {{/asset}}
+        </div>
+        {{{description}}}
+      {{/asset}}
 
-        {{#asset "imagegroup" size="m"}}
-          {{{title}}}
-          <div class="content">
-          {{{imageslider contents width="310" height="232"}}}
-          </div>
-          {{{description}}}
-        {{/asset}}
+      {{#asset "embedgroup" size="l" width="840"}}
+        {{{title}}}
+        <div class="content">
+          {{#embeds}}
+            <div class="embed">{{{html}}}</div>
+          {{/embeds}}
+        </div>
+        {{{description}}}
+      {{/asset}}
 
-        {{#asset "imagegroup" size="l"}}
-          {{{title}}}
-          <div class="content">
-          {{{imageslider contents width="670" height="502"}}}
-          </div>
-          {{{description}}}
-        {{/asset}}
+    {{/region}}
 
-        {{#asset "videogroup" size="m"}}
-          {{{title}}}
-          <div class="content">
-          {{{videoplayer contents width="310" height="232" resolution="medium"}}}
-          </div>
-          {{{description}}}
-        {{/asset}}
-
-        {{#asset "videogroup" size="l"}}
-          {{{title}}}
-          <div class="content">
-          {{{videoplayer contents width="670" height="502" resolution="large"}}}
-          </div>
-          {{{description}}}
-        {{/asset}}
-      {{/region}}
-    </div>
   </script>
 </body>
 </html>
